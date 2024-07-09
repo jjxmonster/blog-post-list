@@ -1,5 +1,5 @@
 import { Author } from "@/types/Author";
-import { BlogPostCard } from "../BlogPostCard/BlogPostCard";
+import { BlogPostCard } from "./BlogPostCard";
 import { BlogPost } from "@/types/BlogPost";
 
 interface BlogPostsListProps {
@@ -18,7 +18,7 @@ export const BlogPostsList: React.FC<BlogPostsListProps> = ({
 					<BlogPostCard
 						post={post}
 						author={
-							authors.find(author => author.id === post.userId)?.name || ""
+							authors?.find(author => author.id === post.userId)?.name || ""
 						}
 					/>
 				</li>

@@ -9,7 +9,7 @@ interface BlogPostCardProps {
 export const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, author }) => {
 	const { title } = post;
 	return (
-		<Card className="w-full h-full">
+		<Card className="w-full h-full flex flex-col justify-between">
 			<CardHeader>
 				<CardTitle>{title}</CardTitle>
 			</CardHeader>

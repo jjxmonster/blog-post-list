@@ -1,20 +1,12 @@
-import { useEffect, useState } from "react";
 import { Author } from "@/types/Author";
 import { API_URL } from "@/lib/constants";
+import { useQuery } from "@tanstack/react-query";
 
-export function useAuthors() {
-	const [authors, setAuthors] = useState<Author[]>([]);
-	const [error, setError] = useState(null);
-
-	useEffect(() => {
-		fetch(`${API_URL}/users`)
-			.then(response => response.json())
-			.then(data => setAuthors(data || []))
-			.catch(error => {
-				setError(error);
-				console.error("Error fetching data:", error);
-			});
-	}, []);
-
-	return { authors, error };
-}
+export const useAuthors = () =>
+	useQuery<Author[]>({
+		queryKey: ["authors"],
+		queryFn: async () => {
+			const response = await fetch(`${API_URL}/users`);
+			return response.json();
+		},
+	});

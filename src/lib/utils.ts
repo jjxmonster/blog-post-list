@@ -17,11 +17,13 @@ export function filterPosts({
 }) {
 	if (!query) return posts;
 
-	return posts.filter(post => {
-		const value = post[key];
-		if (typeof value === "string") {
-			return value.toLowerCase().includes(query.toLowerCase());
-		}
-		return value === Number(query);
-	});
+	return (
+		posts.filter(post => {
+			const value = post[key];
+			if (typeof value === "string") {
+				return value.toLowerCase().includes(query.toLowerCase());
+			}
+			return value === Number(query);
+		}) ?? []
+	);
 }
