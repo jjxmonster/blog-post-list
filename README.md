@@ -1,12 +1,5 @@
 # Blog Posts List
 
-## Installation and running the app
-
-```
-npm i
-npm run dev
-```
-
 ## Tech Stack
 
 - React.js
@@ -14,3 +7,24 @@ npm run dev
 - React Query
 - Shadcn UI
 - Playwright + MSW
+
+## Installation and running the app
+
+```
+npm i
+npm run dev
+```
+
+## Run E2E tests
+
+UI MODE
+
+```
+npm run tests:e2e:ui
+```
+
+NORMAL MODE
+
+```
+npm run tests:e2e
+```
