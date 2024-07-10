@@ -1,5 +1,9 @@
 # Blog Posts List
 
+## Live Preview
+
+https://blog-post-list.vercel.app/
+
 ## Tech Stack
 
 - React.js
