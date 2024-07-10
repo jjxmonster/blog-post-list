@@ -17,13 +17,13 @@ npm run dev
 
 ## Run E2E tests
 
-UI MODE
+#### UI MODE
 
 ```
 npm run tests:e2e:ui
 ```
 
-NORMAL MODE
+#### NORMAL MODE
 
 ```
 npm run tests:e2e
