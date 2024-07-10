@@ -1,0 +1,12 @@
+export const DUMMY_USERS = [
+	{
+		id: 1,
+		name: "Leanne Graham",
+		username: "Bret",
+	},
+	{
+		id: 2,
+		name: "Ervin Howell",
+		username: "Antonette",
+	},
+];
