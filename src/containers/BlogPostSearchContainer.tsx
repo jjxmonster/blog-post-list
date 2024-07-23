@@ -17,7 +17,7 @@ export const BlogPostSearchContainer = () => {
 		<>
 			<div className="pt-24" />
 			<h1 className="text-4xl text-black font-medium text-center">
-				Blog Posts
+				Blog Posts List
 			</h1>
 			<div className="pt-8" />
 			<form className="space-x-4 flex items-end justify-center">
