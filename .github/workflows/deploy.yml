@@ -29,4 +29,4 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Run E2E tests
-        run: nm run test:e2e
+        run: npm run test:e2e
