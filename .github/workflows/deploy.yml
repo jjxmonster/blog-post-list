@@ -64,8 +64,6 @@ jobs:
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
         shell: bash
 
-      - name: install playwright browsers
-        run: npx playwright install --with-deps
       - name: Run E2E tests
         run: npm run test:e2e
         env:
