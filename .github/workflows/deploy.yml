@@ -59,6 +59,7 @@ jobs:
       - name: Deploy to Vercel
         if: ${{ inputs.deploy-vercel }}
         run: |
+          DEPLOY_OUTPUT="$(vercel deploy --token=${{ secrets.VERCEL_TOKEN }})"
           DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep http | tail -n 1)
           echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
         shell: bash
