@@ -58,4 +58,12 @@ jobs:
 
       - name: Deploy to Vercel
         if: ${{ inputs.deploy-vercel }}
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep http | tail -n 1)
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ env.DEPLOY_URL }}
