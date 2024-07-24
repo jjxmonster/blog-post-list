@@ -1,7 +1,7 @@
 name: Deploy to Vercel
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -37,7 +37,7 @@ jobs:
 
       - name: Build for Vercel
         if: ${{ inputs.deploy-vercel }}
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
         if: ${{ inputs.deploy-vercel }}
