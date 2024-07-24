@@ -12,6 +12,10 @@ export default defineConfig({
 		trace: "on",
 		actionTimeout: 5000,
 		navigationTimeout: 15000,
+		extraHTTPHeaders: {
+			"x-vercel-protection-bypass":
+				process.env.VERCEL_AUTOMATION_BYPASS_SECRET!,
+		},
 	},
 	outputDir: "playwright/test-results",
 });

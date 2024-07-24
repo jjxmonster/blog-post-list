@@ -3,10 +3,6 @@ name: Deploy to Vercel
 on:
   workflow_dispatch:
     inputs:
-      deploy-netlify:
-        type: boolean
-        description: Enable Netlify deployment
-        default: true
       deploy-vercel:
         type: boolean
         description: Enable Vercel deployment
