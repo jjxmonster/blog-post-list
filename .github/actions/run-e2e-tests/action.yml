@@ -1,0 +1,10 @@
+name: Run E2E tests
+
+inputs:
+  base-url:
+    description: "Base URL"
+    required: true
+
+  run: npm run test:e2e
+  env:
+    PLAYWRIGHT_BASE_URL: ${{ inputs.base-url }}
