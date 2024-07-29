@@ -31,3 +31,4 @@ runs:
       run: npm run test:e2e
       env:
         PLAYWRIGHT_BASE_URL: ${{ env.DEPLOY_URL }}
+      shell: bash
