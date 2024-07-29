@@ -18,9 +18,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Deploy app to Vercel preview
-        uses: ./.github/actions/deploy-vercel
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        uses: ./.github/actions/deploy-vercel.yml
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
