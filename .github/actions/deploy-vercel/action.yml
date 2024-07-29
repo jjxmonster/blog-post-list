@@ -29,5 +29,5 @@ runs:
 
     - name: Run E2E tests
       run: npm run test:e2e
-       env:
-         PLAYWRIGHT_BASE_URL: ${{ env.DEPLOY_URL }}
+      env:
+        PLAYWRIGHT_BASE_URL: ${{ env.DEPLOY_URL }}
