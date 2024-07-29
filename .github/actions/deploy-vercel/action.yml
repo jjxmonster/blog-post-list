@@ -31,4 +31,4 @@ runs:
       uses: ./.github/actions/run-e2e-tests
       with:
         base-url: ${{ env.DEPLOY_URL }}
-      shell: bash
+      secrets: inherit
