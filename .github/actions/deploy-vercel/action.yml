@@ -1,22 +1,28 @@
 name: Deploy to Vercel
 
+inputs:
+  vercel-token:
+    description: "Vercel token"
+    required: true
 
+runs:
+  using: "composite"
+  steps:
+    - name: Install Vercel CLI
+      run: npm install --global vercel@canary
+      shell: bash
 
-  runs:
-    using: "composite"
-    steps:
-      - name: Install Vercel CLI
-        run: npm install --global vercel@canary
+    - name: Pull Vercel Environment Information
+      run: vercel pull --yes --environment=preview --token=${{ inputs.vercel-token }}
+      shell: bash
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+    - name: Build for Verce l
+      run: vercel build --token=${{ inputs.vercel-token }}
+      shell: bash
 
-      - name: Build for Vercel
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy to Vercel
-        run: |
-          DEPLOY_OUTPUT="$(vercel deploy --token=${{ secrets.VERCEL_TOKEN }})"
-          DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep http | tail -n 1)
-          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
-        shell: bash
+    - name: Deploy to Vercel
+      run: |
+        DEPLOY_OUTPUT="$(vercel deploy --token=${{ inputs.vercel-token }})"
+        DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep http | tail -n 1)
+        echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+      shell: bash
