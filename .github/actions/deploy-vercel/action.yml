@@ -28,8 +28,6 @@ runs:
       shell: bash
 
     - name: Run E2E tests
-      uses: ./.github/actions/run-e2e-tests
-      with:
-        base-url: ${{ env.DEPLOY_URL }}
-      env:
-        VERCEL_AUTOMATION_BYPASS_SECRET: ${{ env.VERCEL_AUTOMATION_BYPASS_SECRET }}
+      run: npm run test:e2e
+       env:
+         PLAYWRIGHT_BASE_URL: ${{ env.DEPLOY_URL }}
