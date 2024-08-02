@@ -1,0 +1,21 @@
+name: E2E Tests Cron
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 * * * *"
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure node
+        uses: ./.github/actions/setup
+
+      - name: Run E2E tests
+        uses: ./.github/actions/run-e2e-tests
+        with:
+          base-url: ${{ secrets.VERCEL_URL }}
