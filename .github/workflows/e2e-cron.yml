@@ -18,4 +18,4 @@ jobs:
       - name: Run E2E tests
         uses: ./.github/actions/run-e2e-tests
         with:
-          base-url: ${{ secrets.VERCEL_URL }}
+          base-url: ${{ secrets.VERCEL_DEPLOY_URL }}
