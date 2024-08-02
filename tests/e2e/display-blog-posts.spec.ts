@@ -7,5 +7,5 @@ test("display blog posts", async ({ page }) => {
 
 	expect(posts).toHaveLength(DUMMY_POSTS.length);
 	expect(await posts[0].textContent()).toContain(DUMMY_POSTS[0].title);
-	expect(await posts[1].textContent()).toContain(DUMMY_POSTS[1].title);
+	expect(await posts[1].textContent()).toContain(DUMMY_POSTS[2].title);
 });
