@@ -12,6 +12,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@featurevisor/react": "^1.20.0",
+		"@featurevisor/sdk": "^1.20.0",
 		"@radix-ui/react-select": "^2.1.1",
 		"@radix-ui/react-slot": "^1.1.0",
 		"@tanstack/react-query": "^5.50.1",
