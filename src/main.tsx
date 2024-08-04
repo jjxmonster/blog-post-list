@@ -14,7 +14,7 @@ const queryClient = new QueryClient({
 	},
 });
 
-const envName = import.meta.env.VITE_ENV_NAME || "preview";
+const envName = import.meta.env.MODE || "preview";
 
 const featurevisor = createInstance({
 	datafileUrl: `https://d9f0wbtdbs2sh.cloudfront.net/${envName}/datafile-tag-all.json`,
