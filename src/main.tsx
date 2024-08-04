@@ -17,9 +17,7 @@ const queryClient = new QueryClient({
 const envName = import.meta.env.VITE_ENV_NAME || "preview";
 
 const featurevisor = createInstance({
-	datafileUrl: `${
-		import.meta.env.VITE_FEATUREVISOR_CDN_URL
-	}/${envName}/datafile-tag-all.json`,
+	datafileUrl: `https://d9f0wbtdbs2sh.cloudfront.net/${envName}/datafile-tag-all.json`,
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
